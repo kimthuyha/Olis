@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="Olis.RecipeViewCell" Margin="5,10,5,0" HasShadow="False"
+    x:Name="stack" WidthRequest="155" HeightRequest="180" Padding="10">
+    <StackLayout>
+        <Image HorizontalOptions="Center"
+            x:Name="image" WidthRequest="150" HeightRequest="150"
+            Aspect="AspectFill">
+        </Image>
+        <Label x:Name="recipeName" TextColor="#393836" HorizontalOptions="Center"
+               Margin="0,5,0,0" FontSize="12" FontFamily="RalewaySemi"/>
+    </StackLayout>
+        
+</Frame>
+

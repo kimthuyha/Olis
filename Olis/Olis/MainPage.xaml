@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Olis.MainPage"
+             xmlns:local="clr-namespace:Olis">
+
+    <StackLayout BackgroundColor="#F9F9F9">
+        <local:Header x:Name="header"/>
+        <SearchBar Placeholder="Search your recipes" BackgroundColor="#F9F9F9"
+                   CancelButtonColor="#2E876B" FontFamily="RalewayReg"
+                   TextChanged="SearchBar_TextChanged"/>
+        <ScrollView>
+            <Grid x:Name="catalog" Margin="30,0,30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>
+

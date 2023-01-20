@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Olis.Header"
+    Margin="30,55,30,10"
+    x:Name="This">
+    <StackLayout.Resources>
+        <Color x:Key="TextColor">#DE803E</Color>
+
+    </StackLayout.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LButton" Grid.Row="0" Grid.Column="0"  
+               TextColor="{StaticResource TextColor}" IsVisible="{Binding HasBackButton}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text=" " FontAttributes="Bold" FontSize="36"/>
+                    <Span Text="&#xf053;" FontSize="20" FontFamily="FontAwesome"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label Grid.Row="0" Grid.Column="1" TextColor="{StaticResource TextColor}" 
+                HorizontalOptions="Center" FontFamily="RalewaySemi" FontSize="36">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text=" Olio" FontSize="36" FontFamily="RalewaySemi"/>
+                    <Span Text=" " FontSize="15"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label Grid.Row="0" Grid.Column="2" TextColor="{StaticResource TextColor}"
+                HorizontalOptions="End" x:Name="RButton">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text=" " FontAttributes="Bold" FontSize="36"/>
+                    <Span Text="{Binding RButtonText}" FontSize="15" FontFamily="RalewaySemi"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </Grid>
+</StackLayout>
+

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Olis.ViewPage"
+    xmlns:local="clr-namespace:Olis"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageloading1="http://xamarin.com/schemas/2014/forms/design">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F9F9F9">
+            <local:Header x:Name="header"/>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout.Resources>
+                        <Color x:Key="TextColor">#393836</Color>
+                        
+                        <x:String x:Key="Bold">RalewayBold</x:String>
+                        <x:String x:Key="Semi">RalewaySemi</x:String>
+                        <x:String x:Key="Reg">RalewayReg</x:String>
+                        <Style TargetType="{x:Type Button}">
+                            <!--<Setter Property="BackgroundColor" Value="#2E876B" />-->
+                            <Setter Property="FontAttributes" Value="Bold" />
+                            <Setter Property="TextColor" Value="White" />
+                            <Setter Property="TextColor" Value="#2E876B" />
+                            <!--<Setter Property="FontFamily" Value="RalewaySemi" />-->
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                            <!--<Setter Property="WidthRequest" Value="200" />-->
+                            <Setter Property="Padding" Value="10" />
+                        </Style>
+
+                        <Style TargetType="{x:Type Entry}">
+                            <Setter Property="TextColor"
+                                    Value="#393836" />
+                            <Setter Property="FontFamily" Value="RalewaySemi" />
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                            <Setter Property="WidthRequest" Value="200" />
+                        </Style>
+                        <Style TargetType="{x:Type Label}">
+                            <Setter Property="TextColor"
+                                    Value="#393836" />
+                            <Setter Property="FontFamily" Value="RalewaySemi" />
+                        </Style>
+                    </StackLayout.Resources>
+                    <Frame HasShadow="False" Padding="0" CornerRadius="0" >
+                        <Image HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            x:Name="image"
+                            Aspect="AspectFill"
+                            >
+                        </Image>
+                    </Frame>
+                    <Label x:Name="recipeName" Margin="0,20,0,0"
+                           HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                           Text="{Binding Recipe.Name}" FontSize="20"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center"
+                                 Margin="0,10,0,0">
+                        <!--<Picker x:Name="servingPicker" HorizontalTextAlignment="Center"
+                                SelectedIndex="{Binding Recipe.Servings, Mode=OneWay}"
+                                TextColor="{StaticResource TextColor}"/>-->
+                        <Label x:Name="servingPicker" VerticalTextAlignment="Center"
+                                Text="{Binding Recipe.Servings, Mode=OneWay}"
+                                TextColor="{StaticResource TextColor}" FontSize="15"/>
+                        <Label VerticalTextAlignment="Center" Text="Serving(s)"
+                               TextColor="{StaticResource TextColor}" FontSize="15"/>
+                    </StackLayout>
+                    <local:CardView x:Name="ingredientCard" Title="Ingredients:"
+                                    Color="#DE803E">
+                        <x:Arguments>
+                            <x:String>ingredient</x:String>
+                        </x:Arguments>
+                    </local:CardView>
+                    <local:CardView x:Name="directionCard" Title="Directions:"
+                                    Color="#2E876B">
+                        <x:Arguments>
+                            <x:String>direction</x:String>
+                        </x:Arguments>
+                    </local:CardView>
+                    <local:NutritionLabel x:Name="nutritionCard"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
